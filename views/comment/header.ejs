@@ -1,0 +1,28 @@
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+    <!-- Brand -->
+    <a class="navbar-brand" href="#"><img src="../public/images/logo.png" width="30" alt=""></a>
+
+    <!-- Links -->
+    <ul class="navbar-nav">
+        <li class="nav-item">
+            <a class="nav-link <%=title=='home'?'active':''%>" href="./home">首页</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link <%=title=='news'?'active':''%>" href="./news">资讯</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link <%=title=='form'?'active':''%>" href="./form">表单</a>
+        </li>
+        <!-- Dropdown -->
+        <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+                个人中心
+            </a>
+            <div class="dropdown-menu">
+                <a class="dropdown-item" href="#">我的收藏</a>
+                <a class="dropdown-item" href="#">修改个人信息</a>
+                <a class="dropdown-item" href="./logout">注销</a>
+            </div>
+        </li>
+    </ul>
+</nav>

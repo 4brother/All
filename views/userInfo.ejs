@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>用户详情</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="shortcut icon" href="../public/images/logo.png" type="image/x-icon" />
+  <link rel='stylesheet' href='/stylesheets/style.css' />
+  <link rel="stylesheet" href="../public/bootStrap/css/bootstrap.min.css">
+  <script src="../public/bootStrap/js/jquery-3.2.1.js"></script>
+  <script src="../public/bootStrap/js/bootstrap.min.js"></script>
+  <script src="../public/bootStrap/js/bootstrap.bundle.min.js"></script>
+  <script src="../public/angular-1.7.8/angular.min.js"></script>
+</head>
+
+<body>
+  <div class="container">
+    <div class="jumbotron">
+      <h1 class="display-4">用户详情</h1>
+      <p class="lead">这是B站的用户。这是B站的用户。这是B站的用户。这是B站的用户。这是B站的用户。这是B站的用户。这是B站的用户。这是B站的用户。</p>
+      <hr class="my-4">
+      <dl>
+        <dt>姓名：</dt>
+        <dd>- <%= user_name %></dd>
+        <dt>性别：</dt>
+        <dd>- <%= user_sex %></dd>
+        <dt>头像：</dt>
+        <dd><img src="<%= user_face %>" alt="" width="200" height="200"></dd>
+      </dl>
+      <p><%=user_sign%></p>
+      <p class="lead">
+        <button class="btn btn-primary btn-lg" data-toggle="tooltip" data-placement="top"
+          title="Learn more">Learn more</button>
+        <button type="button" class="btn btn-secondary" data-toggle="tooltip" data-placement="top"
+          title="Tooltip on top">
+          Tooltip on top
+        </button>
+      </p>
+    </div>
+  </div>
+</body>
+<script>
+  $(function () {
+    $('[data-toggle="tooltip"]').tooltip()
+  })
+</script>
+
+</html>
