@@ -19,7 +19,8 @@
             <div class="row">
                 <div class="bg-dark col-8 offset-2">
                     <h2 class="center bg-gradient-primary text-white">欢迎登录</h2>
-                    <form action="./login/submit" method="POST" onsubmit="">
+                    <form action="./login" method="POST" onsubmit="">
+                        <p class="text-center text-danger margin-bottom-0"><%-msg%></p>
                         <div class="form-group">
                             <label class="bg-gradient-secondary text-white">用户名：</label>
                             <input type="text" class="form-control" name="name">
