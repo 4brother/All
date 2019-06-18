@@ -4,13 +4,13 @@ let db = require('../model/db');
 /* GET home page. */
 let login = require('./login')
 
-router.use(function (req,res,next) {
-  console.log(req.session)
-  if(!req.session.ID || !req.session.name){
-    return res.redirect('../login');
-  }
-  next();
-})
+// router.use(function (req,res,next) {
+//   console.log(req.session)
+//   if(!req.session.ID || !req.session.name){
+//     return res.redirect('../login');
+//   }
+//   next();
+// })
 
 router.get('/home', function(req, res, next) {
   let page=req.query.page?req.query.page:1;
@@ -30,6 +30,18 @@ router.get('/news', function(req,res,nex){
 });
 router.get('/form', function(req, res, next){
   res.render('form', {title: 'form'})
+})
+router.post('/insert', function(req,res,next){
+  console.log(req.body)
+  let name = req.body.name;
+  let password = req.body.password;
+  let connection = db.connection();
+  let sql = `INSERT INTO admin(name,password) VALUES('${name}','${password}');`;
+  db.query(connection,sql,function(result){
+    console.log(result.insertId);
+  })
+  db.close(connection);
+  res.json(result.toString());
 })
 router.get('/logout',function(req,res,next){
   req.session.destroy();
