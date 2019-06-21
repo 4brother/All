@@ -2,13 +2,14 @@ var express = require('express');
 var router = express.Router();
 let db = require('../model/db');
 /* GET home page. */
-router.use(function (req,res,next) {
-  console.log(req.session)
-  if(!req.session.ID || !req.session.name){
-    return res.redirect('../login');
-  }
-  next();
-})
+// router.use(function (req,res,next) {
+//   console.log(req.session)
+//   console.log(req.path)
+//   if(!req.session.ID || !req.session.name){
+//     return res.redirect('../login');
+//   }
+//   next();
+// })
 
 router.get('/home', function(req, res, next) {
   let page=req.query.page?req.query.page:1;

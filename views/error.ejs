@@ -1,3 +1,40 @@
-<h1><%= message %></h1>
+<!-- <h1><%= message %></h1>
 <h2><%= error.status %></h2>
-<pre><%= error.stack %></pre>
+<pre><%= error.stack %></pre> -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="shortcut icon" href="/public/images/logo.png" type="image/x-icon" />
+    <link rel="stylesheet" href="/public/bootStrap/css/bootstrap.min.css">
+    <link rel="stylesheet/less" href="/public/less/style.less">
+    <script src="/public/less/less.min.js"></script>
+    <script src="/public/bootStrap/js/jquery-3.2.1.js"></script>
+    <script src="/public/bootStrap/js/bootstrap.min.js"></script>
+    <title><%=error.status%></title>
+</head>
+
+<body>
+    <div class="container-fluid er">
+        <div class="row">
+            <div class="col-8 offset-2 mid">
+                <img src="/public/images/very_sorry.png" alt="" class="img-fluid">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-4 offset-2 mid">
+                <button class="btn btn-primary float-right" onclick="window.history.go(-1);">返回上一级</button>
+            </div>
+            <div class="col-4 mid left">
+                <p>错误号：<%=error.status%></p>
+                <p>用户IP：<%=ip%></p>
+                <p>请求地址：<%=url%></p>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

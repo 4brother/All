@@ -33,6 +33,19 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 //允许访问公共文件
 app.use('/public',express.static('public'));
+app.use(function (req,res,next) {
+  // console.log(req.session)
+  // // 当前路径 没有参数
+  // console.log(req.path)
+  // // 当前路径 有参数
+  // console.log(req.originalUrl)
+  // // 当前路径有参数
+  // console.log(req.url)
+  if((!req.session.ID || !req.session.name)&&req.originalUrl!='/login'){
+    return res.redirect('../login');
+  }
+  next();
+})
 app.use('/index', indexRouter);
 app.use('/users', usersRouter);
 app.use('/file', upLoadFile);
@@ -52,7 +65,7 @@ app.use(function(err, req, res, next) {
 
   // render the error page
   res.status(err.status || 500);
-  res.render('error');
+  res.render('error',{ip: req.ip,url: req.protocol +'://'+ req.hostname + req.originalUrl});
 });
 
 module.exports = app;
