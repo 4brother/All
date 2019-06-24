@@ -133,7 +133,7 @@
         <li class="page-item"><a class="page-link" href="./home?page=<%=Number(page)+1%>">Next</a></li>
         <%}%>
               <li class="page-item">  
-                  <select class="form-control" onchange="location.href='../home?page='+this.value;">
+                  <select class="form-control" onchange="location.href='../index/home?page='+this.value;">
                   <option value="0" hidden>跳转</option>
                   <%for(let i=1;i<=pages;i++){%>
         <option><%=i%></option>
